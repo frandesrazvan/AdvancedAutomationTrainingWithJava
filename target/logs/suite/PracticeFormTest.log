@@ -1,0 +1,15 @@
+2023-12-04 13:58:20 INFO  LoggerUtility:13 - Execution started: PracticeFormTest
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.HomePage : clickFormsPage => The user clicks on Forms field
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.FormsPage : clickPracticeForm => The user clicks on Practice Form
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:Nae
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:Bucalae
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:naebucalae2000@gmail.com
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills Mobile Number field with value:0535235236
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeGender => The user clicks on gender field Other
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user clicks on Date Of Birth field
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects year 1970
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects month June
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects day 29
+2023-12-04 13:58:21 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : selectHobbies => The user selects hobbies
+2023-12-04 13:58:21 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : selectHobbies => The user selects hobbies
+2023-12-04 13:58:21 INFO  LoggerUtility:16 - Execution ended: PracticeFormTest

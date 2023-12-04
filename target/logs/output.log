@@ -1,0 +1,47 @@
+Contents of file PracticeFormTest.log
+2023-12-04 13:58:20 INFO  LoggerUtility:13 - Execution started: PracticeFormTest
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.HomePage : clickFormsPage => The user clicks on Forms field
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.FormsPage : clickPracticeForm => The user clicks on Practice Form
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:Nae
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:Bucalae
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills First Name field with value:naebucalae2000@gmail.com
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : fillFirstSection => The user fills Mobile Number field with value:0535235236
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeGender => The user clicks on gender field Other
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user clicks on Date Of Birth field
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects year 1970
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects month June
+2023-12-04 13:58:20 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : completeDateOfBirth => The user selects day 29
+2023-12-04 13:58:21 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : selectHobbies => The user selects hobbies
+2023-12-04 13:58:21 INFO  LoggerUtility:19 - main : Pages.PracticeFormPage : selectHobbies => The user selects hobbies
+2023-12-04 13:58:21 INFO  LoggerUtility:16 - Execution ended: PracticeFormTest
+Contents of file WebTableTest.log
+2023-11-27 14:54:46 INFO  LoggerUtility:13 - Execution started: WebTableTest
+2023-11-27 14:54:47 INFO  LoggerUtility:19 - main : Pages.HomePage : clickElementsPage => The user clicks on Elements field
+2023-11-27 14:54:47 INFO  LoggerUtility:19 - main : Pages.ElementsPage : clickElementsPage => The user clicks on Web Tables
+2023-11-27 14:54:47 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : clickAddButton => The user clicks on Add button
+2023-11-27 14:54:47 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills First Name field with value:Dorinel
+2023-11-27 14:54:47 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills Last Name field with value:Mangalia
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills Email field with value:dorinelmangalia@gmail.com
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills Age field with value:99
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills Salary field with value:2500
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user fills Department field with value:Fotbal
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : fillRegisterForm => The user clicks on Submit button
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableSize => The user validates the expected table row count with the value:4
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Dorinel value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Mangalia value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of dorinelmangalia@gmail.com value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of 99 value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of 2500 value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Fotbal value
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : modifyNewEntry => The user clicks on Edit button
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : modifyNewEntry => The user sets First Name to Mandarin
+2023-11-27 14:54:48 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : modifyNewEntry => The user clicks on Submit button after it was modified
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Mandarin value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Mangalia value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of dorinelmangalia@gmail.com value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of 99 value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of 2500 value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableContent => The user validates the presence of Fotbal value
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : deleteNewEntry => The user clicks on Delete button
+2023-11-27 14:54:49 INFO  LoggerUtility:19 - main : Pages.WebTablesPage : validateTableAfterDelete => The user validates the expected table row count with the value:3
+2023-11-27 14:54:49 INFO  LoggerUtility:16 - Execution ended: WebTableTest
