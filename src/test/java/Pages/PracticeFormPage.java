@@ -93,7 +93,7 @@ public class PracticeFormPage extends BasePage {
 
     public void completeDateOfBirth(PracticeFormObject practiceFormObject) {
         elementMethods.clickElement(dateOfBirthField);
-        LoggerUtility.infoTest("The user clicks on Date Of Birth field");
+        LoggerUtility.infoTest("The user clicks on Date Of Birth field ");
 
         elementMethods.selectByValue(dateOfBirthYearField, practiceFormObject.getDateOfBirthYear());
         LoggerUtility.infoTest("The user selects year " + practiceFormObject.getDateOfBirthYear());
