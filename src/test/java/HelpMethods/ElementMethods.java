@@ -1,5 +1,6 @@
 package HelpMethods;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -38,23 +39,22 @@ public class ElementMethods {
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
-    public void fillElement(WebElement element,String text){
+    public void fillElement(WebElement element, String text){
         waitVisibleElement(element);
         element.sendKeys(text);
     }
-    public void validateTextElement(WebElement element,String text){
+    public void validateTextElement(WebElement element, String text){
         waitVisibleElement(element);
         String actualValue=element.getText();
         Assert.assertEquals(actualValue,text);
     }
-    public void selectByText(WebElement element,String text){
+    public void selectByText(WebElement element, String text){
         Select countryDropdown=new Select(element);
         countryDropdown.selectByVisibleText(text);
     }
-    public void selectByValue(WebElement element,String text){
+    public void selectByValue(WebElement element, String text){
         Select countryDropdown=new Select(element);
         countryDropdown.selectByValue(text);
     }
@@ -62,5 +62,19 @@ public class ElementMethods {
     public void clearElement(WebElement element) {
         waitVisibleElement(element);
         element.clear();
+    }
+
+    public void fillUsingActions(WebElement element, String text) {
+        Actions actions = new Actions(driver);
+
+        actions.click(element).build().perform(); // sau doar .perform()
+        actions.sendKeys(element, text).build().perform();
+        waitVisibleElement(element); // ne necesar mie, dar in training aveau probleme
+        actions.sendKeys(Keys.ENTER).build().perform();
+    }
+
+    public void pressEnter() {
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ENTER).perform();
     }
 }

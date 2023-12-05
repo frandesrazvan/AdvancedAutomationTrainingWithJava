@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class PracticeFormPage extends BasePage {
     public PracticeFormPage(WebDriver driver) { super(driver); }
@@ -38,7 +39,7 @@ public class PracticeFormPage extends BasePage {
     private WebElement dateOfBirthMonthField;
     @FindBy(xpath = "//div[@class='react-datepicker__week']/*[not(contains(@class, 'outside-month'))][text()='']")
     private WebElement dateOfBirthDayField;
-    @FindBy(xpath = "//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']")
+    @FindBy(id = "subjectsContainer")
     private WebElement subjectField;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
     private WebElement hobbySports;
@@ -46,6 +47,18 @@ public class PracticeFormPage extends BasePage {
     private WebElement hobbyReading;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-3']")
     private WebElement hobbyMusic;
+    @FindBy(xpath = "//input[@id='uploadPicture']")
+    private WebElement chooseFileButton;
+    @FindBy(xpath = "//textarea[@id='currentAddress']")
+    private WebElement currentAddressField;
+    @FindBy(id = "state")
+    private WebElement stateField;
+    @FindBy(id = "city")
+    private WebElement cityField;
+    @FindBy(id = "submit")
+    private WebElement submitButton;
+    @FindBy(className = "modal-body")
+    private WebElement table;
 
     public void fillFirstSection(PracticeFormObject practiceFormObject) {
         elementMethods.fillElement(firstName, practiceFormObject.getFirstName());
@@ -93,8 +106,8 @@ public class PracticeFormPage extends BasePage {
         LoggerUtility.infoTest("The user selects day " + practiceFormObject.getDateOfBirthDay());
     }
 
-    public void completeSubjectField(PracticeFormObject practiceFormObject) {
-        elementMethods.fillElement(subjectField ,practiceFormObject.getSubject());
+    public void completeSubject(PracticeFormObject practiceFormObject) {
+        elementMethods.fillUsingActions(subjectField, practiceFormObject.getSubject());
         LoggerUtility.infoTest("The user fill Subject field with value " + practiceFormObject.getDateOfBirthDay());
     }
 
@@ -110,7 +123,74 @@ public class PracticeFormPage extends BasePage {
                 elementMethods.clickElement(hobbyMusic);
             }
 
-            LoggerUtility.infoTest("The user selects hobbies");
+            LoggerUtility.infoTest("The user adds " + practiceFormObject.getHobby() + " hobbies");
         }
+    }
+
+    public void uploadPicture() {
+        String imagePath = "src/test/resources/poza1.jpg";
+
+        chooseFileButton.sendKeys(imagePath);
+        LoggerUtility.infoTest("The user uploads a photo");
+    }
+
+    public void enterCurrentAddress(PracticeFormObject practiceFormObject) {
+        elementMethods.fillElement(currentAddressField, practiceFormObject.getCurrentAddress());
+        LoggerUtility.infoTest("The user fills Current Address field with value: " + practiceFormObject.getCurrentAddress());
+    }
+
+    public void selectStateAndCity(PracticeFormObject practiceFormObject) {
+        elementMethods.fillUsingActions(stateField, practiceFormObject.getState());
+        LoggerUtility.infoTest("The user selects state " + practiceFormObject.getState());
+
+        elementMethods.fillUsingActions(cityField, practiceFormObject.getCity());
+        LoggerUtility.infoTest("The user selects city " + practiceFormObject.getCity());
+    }
+
+    public void submitForm() {
+        submitButton.submit();
+        //elementMethods.pressEnter();
+        LoggerUtility.infoTest("The user presses submit button");
+    }
+
+    public void validateTableContent(PracticeFormObject practiceFormObject) {
+        elementMethods.waitVisibleElement(table);
+
+        String tableText = table.getText();
+
+        String fullName = practiceFormObject.getFirstName() + " " + practiceFormObject.getLastName();
+        Assert.assertTrue(tableText.contains(fullName));
+        LoggerUtility.infoTest("The user validates the presence of " + fullName + " value");
+
+        Assert.assertTrue(tableText.contains(practiceFormObject.getEmail()));
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getEmail() + " value");
+
+        Assert.assertTrue(tableText.contains(practiceFormObject.getGender()));
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getGender() + " value");
+
+        Assert.assertTrue(tableText.contains(practiceFormObject.getMobileNumber()));
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getMobileNumber() + " value");
+
+        String birthDate = practiceFormObject.getDateOfBirthDay() + " " + practiceFormObject.getDateOfBirthMonth() + "," + practiceFormObject.getDateOfBirthYear();
+        Assert.assertTrue(tableText.contains(birthDate));
+        LoggerUtility.infoTest("The user validates the presence of " + birthDate + " value");
+
+        Assert.assertTrue(tableText.contains(practiceFormObject.getSubject()));
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getSubject() + " value");
+
+        for(String hobbies: practiceFormObject.getHobby()) {
+            Assert.assertTrue(tableText.contains(hobbies));
+        }
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getHobby() + " value");
+
+        Assert.assertTrue(tableText.contains(chooseFileButton.getText()));
+        LoggerUtility.infoTest("The user validates the presence of picture");
+
+        Assert.assertTrue(tableText.contains(practiceFormObject.getCurrentAddress()));
+        LoggerUtility.infoTest("The user validates the presence of " + practiceFormObject.getCurrentAddress() + " value");
+
+        String stateAndCity = practiceFormObject.getState() + " " + practiceFormObject.getCity();
+        Assert.assertTrue(tableText.contains(stateAndCity));
+        LoggerUtility.infoTest("The user validates the presence of " + stateAndCity + " value");
     }
 }

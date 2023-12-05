@@ -33,7 +33,7 @@ public class SharedData {
     }
 
     public void closeDriver(){
-        //driver.quit();
+        driver.quit();
     }
 
     public WebDriver getDriver() {
