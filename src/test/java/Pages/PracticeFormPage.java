@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import java.io.File;
+
 public class PracticeFormPage extends BasePage {
     public PracticeFormPage(WebDriver driver) { super(driver); }
 
@@ -39,7 +41,7 @@ public class PracticeFormPage extends BasePage {
     private WebElement dateOfBirthMonthField;
     @FindBy(xpath = "//div[@class='react-datepicker__week']/*[not(contains(@class, 'outside-month'))][text()='']")
     private WebElement dateOfBirthDayField;
-    @FindBy(id = "subjectsContainer")
+    @FindBy(id = "subjectsInput")
     private WebElement subjectField;
     @FindBy(xpath = "//label[@for='hobbies-checkbox-1']")
     private WebElement hobbySports;
@@ -107,7 +109,9 @@ public class PracticeFormPage extends BasePage {
     }
 
     public void completeSubject(PracticeFormObject practiceFormObject) {
-        elementMethods.fillUsingActions(subjectField, practiceFormObject.getSubject());
+        //elementMethods.fillUsingActions(subjectField, practiceFormObject.getSubject());
+        elementMethods.fillElement(subjectField, practiceFormObject.getSubject());
+        elementMethods.pressEnter();
         LoggerUtility.infoTest("The user fill Subject field with value " + practiceFormObject.getDateOfBirthDay());
     }
 
@@ -128,10 +132,9 @@ public class PracticeFormPage extends BasePage {
     }
 
     public void uploadPicture() {
-        String imagePath = "src/test/resources/poza1.jpg";
-
-        chooseFileButton.sendKeys(imagePath);
-        LoggerUtility.infoTest("The user uploads a photo");
+        File file = new File("src/test/resources/poza1.jpg");
+        chooseFileButton.sendKeys(file.getAbsolutePath());
+        LoggerUtility.infoTest("The user uploads a phot0");
     }
 
     public void enterCurrentAddress(PracticeFormObject practiceFormObject) {
